@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/24 17:30:36 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/26 12:23:07 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	deftype(va_list args, const char *type)
 		return (NULL);
 	else if (type == 'p' )
 		return (NULL);
-	else if (type == 'd')
-		return (NULL);
-	else if (type == 'i')
+	else if (type == 'd' || type == 'i')
 		return (NULL);
 	else if (type == 'u')
 		return (NULL);
