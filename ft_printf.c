@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/26 15:16:00 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/26 16:37:43 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ int	deftype(va_list args, const char *type)
 	else if (type == 'p')
 		return (NULL);
 	else if (type == 'd' || type == 'i')
-		return (NULL);
+		r += nbrprinter(va_arg(args, char));
 	else if (type == 'u')
-		return (NULL);
-	else if (type == 'x')
-		return (NULL);
-	else if (type == 'X')
+		r += unsignedprinter(va_arg(args, unsigned int));
+	else if (type == 'x' || type == 'X')
 		return (NULL);
 	return (r);
 }

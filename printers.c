@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printers_1.c                                       :+:      :+:    :+:   */
+/*   printers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 12:17:34 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/26 15:39:29 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/26 16:35:55 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	pctprinter(char c)
 
 int	strprinter(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i++])
@@ -34,13 +34,13 @@ int	strprinter(char *s)
 	return (i);
 }
 
-int numprinter(int  c)
+int	numprinter(char c)
 {
-    char *s;
-	int	r;
+	char *s;
+	int r;
 
-    s = ft_itoa(c);
+	s = ft_itoa(c);
 	r = strprinter(s);
 	free(s);
-    return (r);
+	return (r);
 }
