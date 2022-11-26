@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/26 14:40:26 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/26 15:16:00 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	deftype(va_list args, const char *type)
 
 	r = 0;
 	if (type == 'c')
-		r += charprinter();
+		r += charprinter(va_arg(args, char));
 	else if (type == '%')
-		r += pctprinter();
+		r += pctprinter(va_arg(args, char));
 	else if (type == 's')
-		return (NULL);
-	else if (type == 'p' )
+		r += strprinter(va_arg(args, char *));
+	else if (type == 'p')
 		return (NULL);
 	else if (type == 'd' || type == 'i')
 		return (NULL);
