@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_printer.c                                     :+:      :+:    :+:   */
+/*   chars_printer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 12:17:34 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/26 12:19:14 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/26 14:46:35 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,20 @@ int	charprinter(char c)
 {
 	write(1, &c, 1);
 	return (1);
+}
+
+int	pctprinter(void)
+{
+	write(1, '%', 1);
+	return (1);
+}
+
+int	strprinter(char	*s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i++])
+		write(1, &s[i], 1);
+	return (i);
 }

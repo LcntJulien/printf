@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/26 12:23:07 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/26 14:40:26 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	deftype(va_list args, const char *type)
 
 	r = 0;
 	if (type == 'c')
-		return (NULL);
+		r += charprinter();
+	else if (type == '%')
+		r += pctprinter();
 	else if (type == 's')
 		return (NULL);
 	else if (type == 'p' )
@@ -31,8 +33,6 @@ int	deftype(va_list args, const char *type)
 	else if (type == 'x')
 		return (NULL);
 	else if (type == 'X')
-		return (NULL);
-	else if (type == '%')
 		return (NULL);
 	return (r);
 }
