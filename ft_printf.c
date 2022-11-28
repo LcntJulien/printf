@@ -6,14 +6,14 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/26 16:37:43 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:36:35 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 
-int	deftype(va_list args, const char *type)
+int	deftype(va_list args, const char type)
 {
 	int	r;
 
@@ -31,7 +31,7 @@ int	deftype(va_list args, const char *type)
 	else if (type == 'u')
 		r += unsignedprinter(va_arg(args, unsigned int));
 	else if (type == 'x' || type == 'X')
-		return (NULL);
+		r += hexaprinter(va_arg(args, unsigned int), type);
 	return (r);
 }
 
