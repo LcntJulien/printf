@@ -6,9 +6,11 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 12:17:15 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/28 18:23:09 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:04:01 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "printf.h"
 
 int hexprint(unsigned int c, const char s)
 {

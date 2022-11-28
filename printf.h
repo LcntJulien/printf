@@ -1,46 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_printers.c                                    :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/26 12:17:34 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/28 19:08:35 by jlecorne         ###   ########.fr       */
+/*   Created: 2022/11/28 19:01:53 by jlecorne          #+#    #+#             */
+/*   Updated: 2022/11/28 19:30:40 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef PRINTF_H
+# define PRINTF_H
 
-int	charprinter(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+# include <stdarg.h>
+# include <unistd.h>
 
-int	pctprinter(char c)
-{
-	write(1, '%', 1);
-	return (1);
-}
+int	charprinter(char c);
+int	pctprinter(char c);
+int	strprinter(char *s);
+int	nbrprinter(char c);
+int	unsignedprinter(unsigned int c);
+int	hexaprinter(unsigned int c, const char s);
 
-int	strprinter(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i++])
-		write(1, &s[i], 1);
-	return (i);
-}
-
-int	nbrprinter(char c)
-{
-	char *s;
-	int r;
-
-	s = ft_itoa(c);
-	r = strprinter(s);
-	free(s);
-	return (r);
-}
+#endif

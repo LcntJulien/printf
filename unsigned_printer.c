@@ -6,11 +6,11 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:40:26 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/26 16:29:28 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:03:55 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "printf.h"
 
 int	nbrlen(long n)
 {
