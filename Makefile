@@ -1,34 +1,37 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 19:50:43 by jlecorne          #+#    #+#              #
-#    Updated: 2022/11/28 19:54:00 by jlecorne         ###   ########.fr        #
+#    Updated: 2022/11/29 17:34:42 by jlecorne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_printf.c	\
-			char_printers.c	\
-			unsigned_printer.c	\
-			hexa_printer.c	\
+SRCS	= srcs/ft_printf.c	\
+			srcs/char_printers.c	\
+			srcs/unsigned_printer.c	\
+			srcs/hexa_printer.c	\
 
-NAME	= libft.a
+NAME	= libftprintf.a
 
 OBJS	=  ${SRCS:.c=.o}
 
-HEAD	= includes/
+HEAD	= include/
 
 FLAGS	= -Wall -Wextra -Werror
 
 .c.o	:
 		gcc ${FLAGS} -I ${HEAD} -c $< -o ${<:.c=.o}
 
-${NAME} : ${OBJS}
-		ar rc ${NAME} ${OBJS}
+${NAME} : ${OBJS} libft/libft.a
+		ar rc ${NAME} ${OBJS} libft/libft.a
 
+libft/libft.a:
+	$(MAKE) -C libft
+	
 all : ${NAME}
 
 clean :

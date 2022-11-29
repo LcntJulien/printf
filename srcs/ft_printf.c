@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/28 19:03:45 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:54:32 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ int	deftype(va_list args, const char type)
 
 	r = 0;
 	if (type == 'c')
-		r += charprinter(va_arg(args, char));
+		r += charprinter(va_arg(args, int));
 	else if (type == '%')
-		r += pctprinter(va_arg(args, char));
+		r += pctprinter();
 	else if (type == 's')
 		r += strprinter(va_arg(args, char *));
 	else if (type == 'p')
-		return (NULL);
+		return (0) ;
 	else if (type == 'd' || type == 'i')
-		r += nbrprinter(va_arg(args, char));
+		r += nbrprinter(va_arg(args, int));
 	else if (type == 'u')
 		r += unsignedprinter(va_arg(args, unsigned int));
 	else if (type == 'x' || type == 'X')
@@ -34,17 +34,17 @@ int	deftype(va_list args, const char type)
 	return (r);
 }
 
-ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-	va_list args;
-	int r;
+	va_list	args;
+	int		r;
 
 	r = 0;
 	va_start(args, s);
 	while (*s)
 	{
 		if (!s)
-			return (NULL);
+			return (0);
 		if (*s == '%')
 		{
 			r += deftype(args, *s);

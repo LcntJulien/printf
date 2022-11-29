@@ -6,21 +6,21 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 12:17:34 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/28 19:08:35 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:51:43 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	charprinter(char c)
+int	charprinter(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int	pctprinter(char c)
+int	pctprinter(void)
 {
-	write(1, '%', 1);
+	write(1, "%", 1);
 	return (1);
 }
 
@@ -34,10 +34,10 @@ int	strprinter(char *s)
 	return (i);
 }
 
-int	nbrprinter(char c)
+int	nbrprinter(int c)
 {
-	char *s;
-	int r;
+	char	*s;
+	int		r;
 
 	s = ft_itoa(c);
 	r = strprinter(s);
