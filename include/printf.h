@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:01:53 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/29 17:52:09 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:26:23 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 int	charprinter(int c);
 int	pctprinter(void);

@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 12:17:15 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/29 17:13:00 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:40:17 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	hexprint(unsigned int c, const char s)
 	if (c == 0)
 	{
 		write(1, "0", 1);
-		return ;
+		return (0);
 	}
 	else
 	{

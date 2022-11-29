@@ -6,11 +6,12 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:40:26 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/29 17:13:51 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:39:43 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+#include "libft.h"
 
 int	nbrlen(long n)
 {
@@ -48,10 +49,11 @@ char	*unsigned_itoa(unsigned int c)
 int	unsignedprinter(unsigned int c)
 {
 	int		r;
-	char	print;
+	char	*print;
 
 	r = 0;
 	print = unsigned_itoa(c);
 	r += strprinter(print);
 	free(print);
+	return (r);
 }
