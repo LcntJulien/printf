@@ -6,18 +6,19 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 12:17:15 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/29 18:40:17 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:29:25 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
+#include "libft.h"
 
-int	hexprint(unsigned int c, const char s)
+void	hexprint(unsigned int c, const char s)
 {
 	if (c == 0)
 	{
 		write(1, "0", 1);
-		return (0);
+		return ;
 	}
 	else
 	{
@@ -29,13 +30,13 @@ int	hexprint(unsigned int c, const char s)
 		else
 		{
 			if (c <= 9)
-				write(1, (c + '0'), 1);
+				ft_putchar_fd((c + '0'), 1);
 			else
 			{
 				if (s == 'x')
-					write(1, (c - 10 + 'a'), 1);
+					ft_putchar_fd((c - 10 + 'a'), 1);
 				if (s == 'X')
-					write(1, (c - 10 + 'A'), 1);
+					ft_putchar_fd((c - 10 + 'A'), 1);
 			}
 		}
 	}

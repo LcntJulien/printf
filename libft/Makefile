@@ -6,7 +6,7 @@
 #    By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 17:57:39 by jlecorne          #+#    #+#              #
-#    Updated: 2022/11/18 14:30:57 by jlecorne         ###   ########.fr        #
+#    Updated: 2022/11/30 20:23:35 by jlecorne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ NAME	= libft.a
 
 OBJS	=  ${SRCS:.c=.o}
 
-HEAD	= includes/
+HEAD	= ../include/
 
 FLAGS	= -Wall -Wextra -Werror
 
