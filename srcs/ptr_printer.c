@@ -6,13 +6,13 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:31 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/01 17:19:08 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:42:22 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	pprint(unsigned int c)
+void	pprint(unsigned int c)
 {
 	if (c == 0)
 	{
@@ -23,8 +23,8 @@ int	pprint(unsigned int c)
 	{
 		if (c >= 16)
 		{
-			hexprint(c / 16);
-			hexprint(c % 16);
+			pprint(c / 16);
+			pprint(c % 16);
 		}
 		else
 		{
@@ -34,6 +34,7 @@ int	pprint(unsigned int c)
 				ft_putchar_fd(c, 1);
 		}
 	}
+	return ;
 }
 
 int	ptrprinter(unsigned int c)

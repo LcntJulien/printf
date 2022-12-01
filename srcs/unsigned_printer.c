@@ -6,12 +6,11 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:40:26 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/30 20:28:58 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:48:24 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 int	nbrlen(long n)
 {
