@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 12:17:15 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/11/30 20:29:25 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:37:02 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,14 @@ void	hexprint(unsigned int c, const char s)
 int	hexaprinter(unsigned int c, const char s)
 {
 	int	r;
+	int	i;
 
 	r = 0;
-	while (c > 0)
+	i = c;
+	while (i > 0)
 	{
 		r++;
-		c /= 16;
+		i /= 16;
 	}
 	hexprint(c, s);
 	return (r);
