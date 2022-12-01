@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:31 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/01 15:39:53 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:20:11 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,26 @@
 
 int pprint(unsigned int c)
 {
-    int r;
+	if (c == 0)
+	{
+		write(1, "0", 1);
+		return ;
+	}
+	else
+	{
+		if (c >= 16)
+		{
+			hexprint(c / 16);
+			hexprint(c % 16);
+		}
+		else
+		{
+			if (c <= 9)
+				ft_putchar_fd(c, 1);
+			else
+				ft_putchar_fd(c, 1);
+		}
+	}
 }
 
 int	ptrprinter(unsigned int c)
