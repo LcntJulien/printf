@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:01:53 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/01 15:24:49 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:21:35 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		nbrprinter(int c);
 int		unsignedprinter(unsigned int c);
 int		hexaprinter(unsigned int c, const char s);
 int		ft_printf(const char *s, ...);
-//int		ptrprinter(const char );
+int		ptrprinter(unsigned int c);
 
 void	ft_putchar_fd(char c, int fd);
 

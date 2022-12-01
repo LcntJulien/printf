@@ -6,13 +6,13 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:31 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/01 16:20:11 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:19:08 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int pprint(unsigned int c)
+int	pprint(unsigned int c)
 {
 	if (c == 0)
 	{
@@ -39,10 +39,10 @@ int pprint(unsigned int c)
 int	ptrprinter(unsigned int c)
 {
 	int	r;
-    int i;
+	int	i;
 
 	r = 0;
-    i = c;
+	i = c;
 	while (i > 0)
 	{
 		r++;
