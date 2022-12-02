@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/02 11:42:07 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:23:50 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,23 @@ int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	int		r;
+	int		i;
 
 	r = 0;
+	i = 0;
 	va_start(args, s);
-	while (*s)
+	while (s[i])
 	{
 		if (!s)
 			return (r);
-		if (*s == '%')
+		if (s[i] == '%')
 		{
-			printf("Valeur de l'itération de s : %c\n", (*s + 1));
-			r += deftype(args, (*s + 1));
-			s++;
+			r += deftype(args, s[i + 1]);
+			i++;
 		}
 		else
-			r += charprinter(*s);
-		s++;
+			r += charprinter(s[i]);
+		i++;
 	}
 	va_end(args);
 	return (r);

@@ -6,7 +6,7 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:31 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/01 17:42:22 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/02 13:04:22 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,24 @@ void	pprint(unsigned int c)
 		else
 		{
 			if (c <= 9)
-				ft_putchar_fd(c, 1);
+				ft_putchar_fd((c + '0'), 1);
 			else
-				ft_putchar_fd(c, 1);
+				ft_putchar_fd((c - 10 + 'a'), 1);
 		}
 	}
 	return ;
 }
 
-int	ptrprinter(unsigned int c)
+int	ptrprinter(unsigned long long c)
 {
 	int	r;
 	int	i;
 
 	r = 0;
 	i = c;
-	while (i > 0)
+	if (!c)
+		r += write(1, "0x", 2);
+	while (i != 0)
 	{
 		r++;
 		i /= 16;
