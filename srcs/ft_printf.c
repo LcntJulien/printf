@@ -6,11 +6,12 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/01 16:21:08 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:42:07 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	deftype(va_list args, const char type)
 {
@@ -44,10 +45,11 @@ int	ft_printf(const char *s, ...)
 	while (*s)
 	{
 		if (!s)
-			return (0);
+			return (r);
 		if (*s == '%')
 		{
-			r += deftype(args, *s);
+			printf("Valeur de l'itération de s : %c\n", (*s + 1));
+			r += deftype(args, (*s + 1));
 			s++;
 		}
 		else
