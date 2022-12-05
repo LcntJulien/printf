@@ -6,17 +6,19 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/05 18:59:39 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/05 21:07:01 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+//#include <stdio.h>
 
 int	deftype(va_list args, const char type)
 {
 	int	r;
 
 	r = 0;
+	//printf("%d\n", (char)va_arg(args, int));
 	if (type == 'c')
 		r += charprinter(va_arg(args, int));
 	else if (type == '%')
