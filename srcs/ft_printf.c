@@ -6,12 +6,11 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:10:32 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/02 12:23:50 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/05 18:59:39 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	deftype(va_list args, const char type)
 {
@@ -25,7 +24,7 @@ int	deftype(va_list args, const char type)
 	else if (type == 's')
 		r += strprinter(va_arg(args, char *));
 	else if (type == 'p')
-		r += ptrprinter(va_arg(args, unsigned int));
+		r += ptrprinter(va_arg(args, unsigned long long));
 	else if (type == 'd' || type == 'i')
 		r += nbrprinter(va_arg(args, int));
 	else if (type == 'u')
