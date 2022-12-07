@@ -6,33 +6,38 @@
 /*   By: jlecorne <jlecorne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:15:31 by jlecorne          #+#    #+#             */
-/*   Updated: 2022/12/02 13:04:22 by jlecorne         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:28:49 by jlecorne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	pprint(unsigned int c)
+int	ptrlen(uintptr_t c)
 {
-	if (c == 0)
+	int	i;
+
+	i = 0;
+	while (c != 0)
 	{
-		write(1, "0", 1);
-		return ;
+		i++;
+		c /= 16;
+	}
+	return (i);
+}
+
+void	pprint(uintptr_t c)
+{
+	if (c >= 16)
+	{
+		pprint(c / 16);
+		pprint(c % 16);
 	}
 	else
 	{
-		if (c >= 16)
-		{
-			pprint(c / 16);
-			pprint(c % 16);
-		}
+		if (c < 10)
+			ft_putchar_fd((c + '0'), 1);
 		else
-		{
-			if (c <= 9)
-				ft_putchar_fd((c + '0'), 1);
-			else
-				ft_putchar_fd((c - 10 + 'a'), 1);
-		}
+			ft_putchar_fd((c - 10 + 'a'), 1);
 	}
 	return ;
 }
@@ -40,17 +45,15 @@ void	pprint(unsigned int c)
 int	ptrprinter(unsigned long long c)
 {
 	int	r;
-	int	i;
 
 	r = 0;
-	i = c;
-	if (!c)
-		r += write(1, "0x", 2);
-	while (i != 0)
+	r += write(1, "0x", 2);
+	if (c == 0)
+		r += write(1, "0", 1);
+	else
 	{
-		r++;
-		i /= 16;
+		pprint(c);
+		r += ptrlen(c);
 	}
-	pprint(c);
 	return (r);
 }
